@@ -1,0 +1,21 @@
+spring:
+  r2dbc:
+    url: r2dbc:h2:mem:///testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    name: sa
+    password:
+    initialization-mode: always
+    converter:
+      custom:
+        conversions: "com.example.YourCustomConverterPackage"     
+  h2:
+    console:
+      enabled: true
+  sql:
+    init:
+      mode: always
+
+logging:
+  level:
+    org.springframework.data.r2dbc: DEBUG
+
+# Outras configurações específicas da sua aplicação de teste
